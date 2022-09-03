@@ -1,4 +1,4 @@
-package com.example.tifiretyve
+package com.example.tifiretyve.view
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
