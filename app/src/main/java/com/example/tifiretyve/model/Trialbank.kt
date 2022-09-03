@@ -1,5 +1,9 @@
 package com.example.tifiretyve.model
 
+import java.util.*
+
+
+//holds hardcoded array of trials.
 class Trialbank {
 
     private val trialList = arrayOf(
@@ -19,4 +23,14 @@ class Trialbank {
             Answer("Super Mario", false),
             3
         ))
+
+    fun getRandomTrial(): Trial {
+        val random_Number = Random().nextInt(trialList.size)
+        return trialList[random_Number]
+    }
+
+    fun getTrialAtIndex(index: Int): Trial{
+        return trialList[index]
+    }
+
 }
