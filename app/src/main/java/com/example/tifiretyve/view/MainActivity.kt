@@ -16,15 +16,22 @@ class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
-            TiFiretyveTheme {
-                // A surface container using the 'background' color from the theme
-                Surface(
-                    modifier = Modifier.fillMaxSize(),
-                    color = MaterialTheme.colors.background
-                ) {
-                    Greeting("Android")
-                }
+            MyApp(){
+                Greeting(name = "Android")
             }
+        }
+    }
+}
+
+@Composable
+fun MyApp(content: @Composable () -> Unit) {
+    TiFiretyveTheme {
+        // A surface container using the 'background' color from the theme
+        Surface(
+            modifier = Modifier.fillMaxSize(),
+            color = MaterialTheme.colors.background
+        ) {
+            content()
         }
     }
 }
@@ -37,7 +44,7 @@ fun Greeting(name: String) {
 @Preview(showBackground = true)
 @Composable
 fun DefaultPreview() {
-    TiFiretyveTheme {
-        Greeting("Android")
+    MyApp {
+        Greeting(name = "Android")
     }
 }
